@@ -1,0 +1,102 @@
+.dialogs {
+  &__item {
+    display: flex;
+    $item: &;
+    width: 301px;
+    margin-bottom: 22px;
+    &-avatar {
+      position: relative;
+      flex: 0 0 45px;
+      width: 45px;
+      height: 45px;
+      margin-right: 10px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    &--online {
+      #{$item}-avatar {
+        &::before {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          content: '';
+          border-radius: 30px;
+          background-color: #00c980;
+          width: 13px;
+          height: 13px;
+          border: 3px solid #fff;
+        }
+      }
+    }
+
+    &--selected {
+      background-color: #a6c4ff;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      &-top {
+        display: flex;
+        b {
+          flex: 1;
+          font-size: 14px;
+          font-weight: 700;
+          margin-bottom: 5px;
+        }
+        span {
+          opacity: 0.4;
+        }
+      }
+      &-bottom {
+        position: relative;
+        p {
+          opacity: 0.5;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 190px;
+          height: 1.2em;
+          white-space: nowrap;
+        }
+        &-count {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          background-color: #f46b6b;
+          height: 18px;
+          width: 18px;
+          border-radius: 30px;
+          color: white;
+          font-weight: 500;
+          font-size: 11px;
+          text-align: center;
+          line-height: 17px;
+          box-shadow: 0 0 3px #fff;
+        }
+        &-readed {
+          position: absolute;
+          bottom: 0;
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+  &__search {
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid #f7f8f9;
+    .ant-input {
+      background-color: #f7f8f9;
+      border: 0;
+      height: 32px;
+      padding: 4px 11px 6px;
+    }
+  }
+}
